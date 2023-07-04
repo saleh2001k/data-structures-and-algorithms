@@ -74,31 +74,3 @@ class LinkedList {
 
 module.exports = LinkedList;
 ```
-
-### Test :
-
-```javascript
-// Create a new linked list
-const linkedList = new LinkedList();
-
-// Append nodes
-linkedList.append(1);
-linkedList.append(3);
-linkedList.append(2);
-
-// Print the linked list
-linkedList.printList(); // Output: 1 -> 3 -> 2
-
-// Insert a node before a specific value
-linkedList.insertBefore(3, 5);
-
-// Print the updated linked list
-linkedList.printList(); // Output: 1 -> 5 -> 3 -> 2
-
-// Insert a node after a specific value
-linkedList.insertAfter(3, 4);
-
-// Print the updated linked list
-linkedList.printList(); // Output: 1 -> 5 -> 3 -> 4 -> 2
-
-```
