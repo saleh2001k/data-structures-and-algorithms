@@ -69,19 +69,19 @@ class Node {
 
   
 
-  // Test Case 1eue();
+
+const queue = new PseudoQueue();
 queue.enqueue(10);
 queue.enqueue(15);
 queue.enqueue(20);
 console.log(queue.dequeue()); // Output: 10
 console.log(queue.dequeue()); // Output: 15
 
-// Test Case 2element
+
 const queue2 = new PseudoQueue();
 queue2.enqueue(5);
 console.log(queue2.dequeue()); // Output: 5
 
-// Test Case 3ternating operations
 const queue3 = new PseudoQueue();
 queue3.enqueue(10);
 console.log(queue3.dequeue()); // Output: 10
@@ -90,7 +90,6 @@ queue3.enqueue(30);
 console.log(queue3.dequeue()); // Output: 20
 console.log(queue3.dequeue()); // Output: 30
 
-// Test Case 4
 const queue4 = new PseudoQueue();
 try {
   console.log(queue4.dequeue()); // Error: PseudoQueue is empty
