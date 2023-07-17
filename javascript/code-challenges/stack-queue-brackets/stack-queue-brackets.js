@@ -1,8 +1,8 @@
 function validateBrackets(string) {
   const stack = [];
-  const openingBrackets = ["(", "[", "{"];
-  const closingBrackets = [")", "]", "}"];
-  const bracketPairs = {
+  const openingBr = ["(", "[", "{"];
+  const closingBr = [")", "]", "}"];
+  const brackets = {
     "(": ")",
     "[": "]",
     "{": "}",
@@ -10,15 +10,14 @@ function validateBrackets(string) {
 
   for (let i = 0; i < string.length; i++) {
     const char = string[i];
-
-    if (openingBrackets.includes(char)) {
+    if (openingBr.includes(char)) {
       stack.push(char);
-    } else if (closingBrackets.includes(char)) {
+    } else if (closingBr.includes(char)) {
       if (stack.length === 0) {
         return false;
       }
-      const lastOpeningBracket = stack.pop();
-      if (bracketPairs[lastOpeningBracket] !== char) {
+      const lastBracket = stack.pop();
+      if (brackets[lastBracket] !== char) {
         return false;
       }
     }
