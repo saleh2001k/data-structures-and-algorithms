@@ -18,24 +18,20 @@ The space complexity is O(N)
 ```javascript
 function validateBrackets(string) {
   const stack = [];
-  const openingBr = ["(", "[", "{"];
-  const closingBr = [")", "]", "}"];
+
   const brackets = {
-    "(": ")",
-    "[": "]",
-    "{": "}",
+    "}": "{",
+    ")": "(",
+    "]": "[",
   };
 
   for (let i = 0; i < string.length; i++) {
-    const char = string[i];
-    if (openingBr.includes(char)) {
-      stack.push(char);
-    } else if (closingBr.includes(char)) {
-      if (stack.length === 0) {
-        return false;
-      }
-      const lastBracket = stack.pop();
-      if (brackets[lastBracket] !== char) {
+    if (string[i] === "{" || string[i] === "(" || string[i] === "[") {
+      stack.push(string[i]);
+    } else if (string[i] === "}" || string[i] === ")" || string[i] === "]") {
+      if (stack[stack.length - 1] === brackets[string[i]]) {
+        stack.pop();
+      } else {
         return false;
       }
     }
