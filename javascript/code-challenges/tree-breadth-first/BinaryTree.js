@@ -38,25 +38,25 @@ class BinaryTree {
     traverse(this.root);
     return result;
   }
-  
-  //------------ breadthFirst methode --------------//
-
-  breadthFirst() {
-    if (!this.root) {
-      return []; //An empty array if the tree is empty
-    }
-    let result = [];
-    let queue = [this.root];
-    while (queue.length) {
-      let node = queue.shift();
-      result.push(node.value);
-      if (node.left) queue.push(node.left);
-      if (node.right) queue.push(node.right);
-    }
-    return result;
-  }
 }
 
+//------------ breadthFirst function --------------//
+function breadthFirst(root) {
+  if (!root) {
+    return []; // An empty array if the tree is empty
+  }
+
+  let result = [];
+  let queue = [root];
+  while (queue.length) {
+    let node = queue.shift();
+    result.push(node.value);
+    if (node.left) queue.push(node.left);
+    if (node.right) queue.push(node.right);
+  }
+
+  return result;
+}
 
 // simple tree
 
@@ -69,7 +69,6 @@ tree.root.left.right = new Node(7);
 tree.root.right.left = new Node(13);
 tree.root.right.right = new Node(20);
 
-
 /*
           10
          /   \
@@ -78,8 +77,8 @@ tree.root.right.right = new Node(20);
        3  7  13 20
 */
 
-console.log(tree.breadthFirst());
+console.log(breadthFirst(tree.root));
 
 // output = [ 10,  5, 15, 3, 7, 13, 20]
 
-module.exports = BinaryTree;
+module.exports = { breadthFirst };
