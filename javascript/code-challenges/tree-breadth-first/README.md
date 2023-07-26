@@ -14,24 +14,27 @@ The FizzBuzzTree class allows you to insert new nodes with values, setting them 
 
 Time complexity = O(n)
 Space complexity = O(n)
+- This algorithm have a O(n) space becouse of the storage of traversal results in the result array and the use of a queue during breadth-first traversal.
 
 ### Solution:
 
 ```javascript
- breadthFirst() {
-    if (!this.root) {
-      return []; //An empty array if the tree is empty
-    }
-    let result = [];
-    let queue = [this.root];
-    while (queue.length) {
-      let node = queue.shift();
-      result.push(node.value);
-      if (node.left) queue.push(node.left);
-      if (node.right) queue.push(node.right);
-    }
-    return result;
+function breadthFirst(root) {
+  if (!root) {
+    return []; // An empty array if the tree is empty
   }
+
+  let result = [];
+  let queue = [root];
+  while (queue.length) {
+    let node = queue.shift();
+    result.push(node.value);
+    if (node.left) queue.push(node.left);
+    if (node.right) queue.push(node.right);
+  }
+
+  return result;
+}
 ```
 
 ### Test:
