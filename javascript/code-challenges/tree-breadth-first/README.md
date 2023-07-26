@@ -6,7 +6,9 @@
 
 ### Approach & Efficiency:
 
-The algorithm uses a queue to keep tracking the nodes that need to be visited, and it starts traversal from the root node and processe the nodes level by level, folowin a FIFO order,at each step the algorithm dequeues a node from the front of the queue and adds its value to the result array, and enqueues its left and right child nodes if they exist,finaly the traversal continues until the queue becomes empty, indicating that all nodes have been processed.
+The provided code defines a tree data structure called FizzBuzzTree. The tree consists of nodes, and each node contains a value, a list of children nodes, and a list to store the results of the "FizzBuzz" operation. The "FizzBuzz" operation is a function that, given a number, returns "fizz" if the number is divisible by 3, "buzz" if divisible by 5, "fizzbuzz" if divisible by both 3 and 5, and the number itself as a string if none of these conditions are met.
+
+The FizzBuzzTree class allows you to insert new nodes with values, setting them as children of existing nodes. The tree can be traversed using Depth-First Search (DFS) to process and retrieve the results of the "FizzBuzz" operation for each node.
 
 #### Big O:
 
