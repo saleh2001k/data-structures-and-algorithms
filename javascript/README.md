@@ -20,6 +20,7 @@ Each type of code challenge has slightly different instructions. Please refer to
     class LinkedList {
       constructor() {
         // code
+    
       }
 
       methodName() {
