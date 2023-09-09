@@ -1,4 +1,4 @@
-const repeatedWord = require("../repetedWord");
+const repeatedWord = require("./repetedWord");
 
 describe("repeatedWord function", () => {
   it("should return the first repeated word in a sentence", () => {
